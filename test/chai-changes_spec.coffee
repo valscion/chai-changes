@@ -11,6 +11,9 @@ describe 'Chai-Changes', ->
       result = 1
       expect(-> result).not.to.change.when(-> 'hello').and.equal 'hello'
 
+    it 'does not conflict with .length', ->
+      expect([1, 2]).to.have.length(2)
+
     describe 'with promises', ->
 
       it 'checks conditions after promise resolved', (done) ->
